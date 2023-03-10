@@ -1,46 +1,31 @@
 package com.example.demo.Controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.OperatingSystemMXBean;
+import java.util.HashMap;
+import java.util.Map;
+
+@CrossOrigin
 @RestController
 public class HelloWorldController {
 
-    @GetMapping("/api/hello")
-    public String test() {
-        String cmd = "wmic cpu get name";
-        Process p = null;
-        try {
-            p = Runtime.getRuntime().exec("cmd /c " + cmd);
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
+    @GetMapping("/api/data")
+    public Map<String, String> getCPUInfo() {
+        OperatingSystemMXBean osBean = ManagementFactory.getOperatingSystemMXBean();
 
-        BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
-        String l = null;
-        StringBuffer sb = new StringBuffer();
-        sb.append(cmd);
-        String ans = null;
-        String [] name = new String[1024];
-        try {
-            while ((l = r.readLine()) != null) {
-                sb.append(l);
-                sb.append("\n");
-            }
-            ans = sb.toString();
+        Map<String, String> data = new HashMap<>();
+        data.put("Arch", osBean.getArch());
+        System.out.println(osBean.getArch());
+        data.put("AvailableProcessors", String.valueOf(osBean.getAvailableProcessors()));
+        data.put("Name", osBean.getName());
+        System.out.println(osBean.getName());
+        data.put("Version", osBean.getVersion());
 
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }finally {
-            name = ans.split("\n");
-            System.out.println(name[2]);
-        }
-        return name[2];
+        return data;
     }
 }
 
