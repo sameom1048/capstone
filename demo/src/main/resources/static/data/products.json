@@ -1,0 +1,228 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "2022 먼슬리 플래너",
+      "provider": "ARDIUM",
+      "price": 6900,
+      "image": "/images/product/planner.png",
+      "category": "c1"
+    },
+    {
+      "id": 2,
+      "name": "리무버블 스티커팩",
+      "provider": "Iconic",
+      "price": 3000,
+      "image": "/images/product/sticker.png",
+      "category": "c1"
+    },
+    {
+      "id": 3,
+      "name": "벽걸이 CD 플레이어",
+      "provider": "tallllst",
+      "price": 39100,
+      "image": "/images/product/cdplayer.png",
+      "category": "c2"
+    },
+    {
+      "id": 4,
+      "name": "아이폰 케이스",
+      "provider": "gogocase",
+      "price": 13000,
+      "image": "/images/product/phonecase.png",
+      "category": "c2"
+    },
+    {
+      "id": 5,
+      "name": "원형 테이블",
+      "provider": "dinodeco",
+      "price": 198000,
+      "image": "/images/product/table.png",
+      "category": "c3"
+    },
+    {
+      "id": 6,
+      "name": "무소음 벽시계",
+      "provider": "banana",
+      "price": 23000,
+      "image": "/images/product/clock.png",
+      "category": "c4"
+    },
+    {
+      "id": 7,
+      "name": "디퓨저 300ml",
+      "provider": "DAILYCOMMA",
+      "price": 17200,
+      "image": "/images/product/defuser.png",
+      "category": "c4"
+    },
+    {
+      "id": 8,
+      "name": "액자 프레임 세트",
+      "provider": "Peace by Moonlight",
+      "price": 31900,
+      "image": "/images/product/frame.png",
+      "category": "c4"
+    },
+    {
+      "id": 9,
+      "name": "머그컵",
+      "provider": "DAILYCOMMA",
+      "price": 6500,
+      "image": "/images/product/cup.png",
+      "category": "c5"
+    },
+    {
+      "id": 10,
+      "name": "데일리 백팩",
+      "provider": "banana",
+      "price": 43000,
+      "image": "/images/product/bagpack.png",
+      "category": "c6"
+    },
+    {
+      "id": 11,
+      "name": "두피케어 샴푸",
+      "provider": "feelsogood",
+      "price": 36000,
+      "image": "/images/product/shampoo.png",
+      "category": "c7"
+    },
+    {
+      "id": 12,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/ring.png",
+      "category": "c8"
+    },
+    {
+      "id": 13,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/highlighter.png",
+      "category": "c1"
+    },
+    {
+      "id": 14,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/pen.png",
+      "category": "c1"
+    },
+    {
+      "id": 15,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/keyboard.png",
+      "category": "c2"
+    },
+    {
+      "id": 16,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/mouse.png",
+      "category": "c2"
+    },
+    {
+      "id": 17,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/mirror.png",
+      "category": "c3"
+    },
+    {
+      "id": 18,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/shelf.png",
+      "category": "c3"
+    },
+    {
+      "id": 19,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/alarmclock.png",
+      "category": "c4"
+    },
+    {
+      "id": 20,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/tree.png",
+      "category": "c4"
+    },
+    {
+      "id": 21,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/cerealball.png",
+      "category": "c5"
+    },
+    {
+      "id": 22,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/thermos.png",
+      "category": "c5"
+    },
+    {
+      "id": 23,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/wallet.png",
+      "category": "c6"
+    },
+    {
+      "id": 24,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/pouch.png",
+      "category": "c6"
+    },
+    {
+      "id": 25,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/dryer.png",
+      "category": "c7"
+    },
+    {
+      "id": 26,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/lipbalm.png",
+      "category": "c7"
+    },
+    {
+      "id": 27,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/earring.png",
+      "category": "c8"
+    },
+    {
+      "id": 28,
+      "name": "링 반지",
+      "provider": "MINIART",
+      "price": 40400,
+      "image": "/images/product/watch.png",
+      "category": "c8"
+    }
+  ]
+}
