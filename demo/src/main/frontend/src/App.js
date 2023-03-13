@@ -15,7 +15,7 @@ import ShowMySpec from "./components/eventBanner/showMySpec";
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-
+  const a=10;
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -66,7 +66,7 @@ function App() {
               products={products}
               setProducts={setProducts}
             />
-           
+
           }
         />
           <Route
