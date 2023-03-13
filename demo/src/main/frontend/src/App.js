@@ -10,11 +10,12 @@ import TopButton from "./components/topButton/topButton";
 import CategoryBar from "./components/category/categoryBar";
 import { OrderComplete } from "./components/cart/orderComplete";
 import { CategoryMove } from "./components/category/categoryMove";
+import ShowMySpec from "./components/eventBanner/showMySpec";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
-  const A = 10;
+  const a=10;
   const convertPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   };
@@ -65,8 +66,15 @@ function App() {
               products={products}
               setProducts={setProducts}
             />
+
           }
         />
+          <Route
+              path="/showMySpec"
+              element={
+                  <ShowMySpec />
+              }
+          />
       </Routes>
     </BrowserRouter>
   );

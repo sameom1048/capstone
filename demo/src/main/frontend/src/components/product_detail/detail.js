@@ -2,6 +2,7 @@ import styles from "./detail.module.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../service/fetcher";
+import CategoryBar from "../category/categoryBar";
 
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
@@ -58,6 +59,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   return (
     product && (
       <>
+      <CategoryBar/>
         <main className={styles.main}>
           <section className={styles.product}>
             <div className={styles.product_img}>
@@ -74,7 +76,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
               </span>
             </div>
 
-            <div className={styles.delivery}>
+            {/* <div className={styles.delivery}>
               <p>택배배송 / 무료배송</p>
             </div>
 
@@ -128,7 +130,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
               >
                 장바구니
               </button>
-            </div>
+            </div> */}
           </section>
         </main>
       </>
