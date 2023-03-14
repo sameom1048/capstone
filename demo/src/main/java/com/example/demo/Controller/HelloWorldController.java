@@ -1,5 +1,6 @@
 package com.example.demo.Controller;
 
+import ch.qos.logback.core.util.SystemInfo;
 import com.example.demo.Model.User;
 import com.example.demo.Sevice.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,14 @@ public class HelloWorldController {
         return data;
     }
 
+//    @GetMapping("/cpu")
+//    public String getCpuInfo() {
+//        OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+//        String cpuName = osBean.getProcessor().getProcessorIdentifier().getName();
+//        int cpuCount = osBean.getAvailableProcessors();
+//        return "CPU Name: " + cpuName + ", CPU Count: " + cpuCount;
+//    }
+
     @GetMapping("/api/userlist")
     public ResponseEntity<List<User>> findAll() {
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
@@ -60,5 +69,16 @@ public class HelloWorldController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
+//    public ResponseEntity<?> registerUser(@RequestBody SignupRequest signupRequest) {
+//        if (userService.existsByEmail(signupRequest.getEmail())) {
+//            return new ResponseEntity<>(new ApiResponse(false, "Email address already in use!"), HttpStatus.BAD_REQUEST);
+//        }
+//
+//        User user = new User(signupRequest.getEmail(), signupRequest.getPassword());
+//
+//        userService.save(user);
+//
+//        return ResponseEntity.ok(new ApiResponse(true, "User registered successfully"));
+//    }
 }
 
