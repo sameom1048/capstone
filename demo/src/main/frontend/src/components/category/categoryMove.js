@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { Product } from "../products/product";
 import { getProducts } from "../../service/fetcher";
 import { useParams } from "react-router-dom";
+import CategoryBar from "./categoryBar";
 
 export const CategoryMove = ({ convertPrice, products, setProducts }) => {
     let params = useParams();
@@ -30,6 +31,7 @@ export const CategoryMove = ({ convertPrice, products, setProducts }) => {
       }, [setProducts]);
       return (
         <>
+        <CategoryBar></CategoryBar>
           <p></p>
           <div className={styles.filter}>
             <p onClick={() => sortProduct("recent")}>최신순</p>

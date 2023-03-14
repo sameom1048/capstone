@@ -90,8 +90,8 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
         })
       ) : (
         <div className={styles.not}>
-          <h2>장바구니에 담긴 상품이 없습니다.</h2>
-          <p>원하는 상품을 장바구니에 담아보세요!</p>
+          {/* <h2>장바구니에 담긴 상품이 없습니다.</h2>
+          <p>원하는 상품을 장바구니에 담아보세요!</p> */}
         </div>
       )}
       {cart.length !== 0 ? (

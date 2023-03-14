@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function showMySpec() {
+function ShowMySpec() {
     const [data, setData] = useState(null);
     const [cpuInfo, setCpuInfo] = useState('');
     const [gpuInfo, setGpuInfo] = useState('');
@@ -32,7 +32,6 @@ function showMySpec() {
         } else {
             setGpuInfo('WebGL을 지원하지 않는 브라우저입니다.');
         }
-
     }, []);
 
     const handleClick = async () => {
@@ -46,37 +45,30 @@ function showMySpec() {
         }
     };
 
-
     const handleInputChange = event => {
-        if(event.target.name === "email"){
+        if (event.target.name === "email") {
             setEmail(event.target.value);
-        }
-        else if(event.target.name === "password"){
+        } else if (event.target.name === "password") {
             setPassword(event.target.value);
         }
-        // else if(event.target.name === "confirmPassword"){
-        //     setConfirmPassword(event.target.value);
-        // }
     }
 
     const handleSubmit = event => {
-            event.preventDefault();
-            const userData = {
-                email: email,
-                password: password
-                // confirmPassword: confirmPassword
-            };
-            console.log("first clear");
-            axios.post('http://localhost:12000/api/signup', userData)
-                .then(response => {
-                    console.log(response);
-                })
-                .catch(error => {
-                    console.log(error);
-                });
-            console.log("second clear");
-        }
-
+        event.preventDefault();
+        const userData = {
+            email: email,
+            password: password,
+        };
+        console.log("first clear");
+        axios.post('http://localhost:12000/api/signup', userData)
+            .then(response => {
+                console.log(response);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        console.log("second clear");
+    }
 
     return (
         <div>
@@ -92,23 +84,18 @@ function showMySpec() {
             {cpuInfo !== null && <p>CPU 정보: {cpuInfo}</p>}
             {gpuInfo !== null && <p>GPU 정보: {gpuInfo}</p>}
             <form onSubmit={handleSubmit}>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" onChange={handleInputChange} />
-            </div>
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" onChange={handleInputChange} />
-            </div>
-            {/*<div>*/}
-            {/*    <label htmlFor="confirmPassword">Confirm Password:</label>*/}
-            {/*    <input type="password" id="confirmPassword" name="confirmPassword" onChange={handleInputChange} />*/}
-            {/*</div>*/}
-            <button type="submit">Submit</button>
+                <div>
+                    <label htmlFor="email">Email:</label>
+                    <input type="email" id="email" name="email" onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="password">Password:</label>
+                    <input type="password" id="password" name="password" onChange={handleInputChange} />
+                </div>
+                <button type="submit">Submit</button>
             </form>
         </div>
-
     );
 }
 
-export default App;
+export default ShowMySpec;
