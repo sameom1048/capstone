@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+//기본 홈 컨트롤러
 @CrossOrigin
 @RestController
 public class HelloWorldController {
