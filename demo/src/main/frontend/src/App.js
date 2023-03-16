@@ -10,7 +10,7 @@ import TopButton from "./components/topButton/topButton";
 import CategoryBar from "./components/category/categoryBar";
 import { OrderComplete } from "./components/cart/orderComplete";
 import { CategoryMove } from "./components/category/categoryMove";
-import ShowMySpec from "./components/eventBanner/showMySpec";
+import ShowMySpec from "./components/eventBanner/ShowMySpec";
 
 function App() {
   const [products, setProducts] = useState([]);
