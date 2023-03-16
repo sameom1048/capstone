@@ -1,4 +1,5 @@
 package com.example.demo.Model;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,17 +8,19 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-@Table(name = "user")
-public class User {
-
+@Table(name = "userInfo")
+public class UserInfo {
     @Id // 기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "CPU")
+    private String CPU;
 
-    @Column(name = "password")
-    private String password;
+    @Column(name = "GPU")
+    private String GPU;
+
+    @Column(name = "RAM")
+    private String RAM;
 
 }

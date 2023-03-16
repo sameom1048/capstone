@@ -1,7 +1,7 @@
 package com.example.demo.Controller;
 
-import com.example.demo.Model.UserInfo;
-import com.example.demo.Sevice.UserInfoService;
+import com.example.demo.Model.GPU;
+import com.example.demo.Sevice.GPUService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +14,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-//기본 홈 컨트롤러
+// CPU, GPU, RAM 정보 컨트롤러
 @CrossOrigin
 @RestController
-public class HelloWorldController {
+public class SystemInfoController {
 
     @Autowired //Bean으로 등록된 클래스들을 스프링을 시작할 때 (서버를 켤 때)자동으로 주입
-    private UserInfoService userInfoService;
+    private GPUService gpuService;
 
-    @GetMapping("/api/data")
+    @GetMapping("/gpu/data")
     public Map<String, String> getCPUInfo() {
         OperatingSystemMXBean osBean = ManagementFactory.getOperatingSystemMXBean();
 
@@ -37,28 +37,35 @@ public class HelloWorldController {
         return data;
     }
 
+//    @GetMapping("/cpu")
+//    public String getCpuInfo() {
+//        OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+//        String cpuName = osBean.getProcessor().getProcessorIdentifier().getName();
+//        int cpuCount = osBean.getAvailableProcessors();
+//        return "CPU Name: " + cpuName + ", CPU Count: " + cpuCount;
+//    }
 
-    @GetMapping("/api/userlist")
-    public ResponseEntity<List<UserInfo>> findAll() {
-        return new ResponseEntity<>(userInfoService.findAll(), HttpStatus.OK);
+    @GetMapping("/api/gpulist")
+    public ResponseEntity<List<GPU>> findAll() {
+        return new ResponseEntity<>(gpuService.findAll(), HttpStatus.OK);
     }
-    @GetMapping("/api/insert/{id}")
-    public ResponseEntity<UserInfo> findById(@PathVariable Long id) {
-        Optional<UserInfo> optionalUser = userInfoService.findById(id);
+    @GetMapping("/api/gpu/{id}")
+    public ResponseEntity<GPU> findById(@PathVariable Long id) {
+        Optional<GPU> optionalUser = gpuService.findById(id);
         if (optionalUser.isPresent()) {
             return new ResponseEntity<>(optionalUser.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @PostMapping("/api/insert")
-    public ResponseEntity<UserInfo> save(@RequestBody UserInfo userInfo) {
+    @PostMapping("/api/gpu")
+    public ResponseEntity<GPU> save(@RequestBody GPU gpu) {
         System.out.println("successfully response!");
-        return new ResponseEntity<>(userInfoService.save(userInfo), HttpStatus.CREATED);
+        return new ResponseEntity<>(gpuService.save(gpu), HttpStatus.CREATED);
     }
-    @DeleteMapping("/api/insert/{id}")
+    @DeleteMapping("/api/gpu/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable Long id) {
-        userInfoService.deleteById(id);
+        gpuService.deleteById(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 

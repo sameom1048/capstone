@@ -5,18 +5,14 @@ function ShowMySpec() {
     const [data, setData] = useState(null);
     const [cpuInfo, setCpuInfo] = useState('');
     const [gpuInfo, setGpuInfo] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [cpuModel, setCpuModel] = useState('');
+    const [CPU, setCPU] = useState('');
+    const [GPU, setGPU] = useState('');
+    const [RAM, setRAM] = useState('');
 
     useEffect(() => {
         // CPU 정보 가져오기
         const cpu = navigator.hardwareConcurrency;
         setCpuInfo(`CPU 모델명: ${cpu}`);
-
-        axios.get('/cpu')
-            .then(response => setCpuModel(response.data.model))
-            .catch(error => console.log(error));
 
         // WebGL을 사용하여 GPU 정보 가져오기
         const canvas = document.createElement('canvas');
@@ -46,28 +42,29 @@ function ShowMySpec() {
     };
 
     const handleInputChange = event => {
-        if (event.target.name === "email") {
-            setEmail(event.target.value);
-        } else if (event.target.name === "password") {
-            setPassword(event.target.value);
+        if (event.target.name === "CPU") {
+            setCPU(event.target.value);
+        } else if (event.target.name === "GPU") {
+            setGPU(event.target.value);
+        } else if (event.target.name === "RAM") {
+            setRAM(event.target.value);
         }
     }
 
     const handleSubmit = event => {
         event.preventDefault();
         const userData = {
-            email: email,
-            password: password,
+            CPU: CPU,
+            GPU: GPU,
+            RAM: RAM
         };
-        console.log("first clear");
-        axios.post('http://localhost:12000/api/signup', userData)
+        axios.post('http://localhost:12000/api/insert', userData)
             .then(response => {
                 console.log(response);
             })
             .catch(error => {
                 console.log(error);
             });
-        console.log("second clear");
     }
 
     return (
@@ -80,17 +77,20 @@ function ShowMySpec() {
                     ))}
                 </ul>
             )}
-            <p>CPU 모델명: {cpuModel}</p>
             {cpuInfo !== null && <p>CPU 정보: {cpuInfo}</p>}
             {gpuInfo !== null && <p>GPU 정보: {gpuInfo}</p>}
             <form onSubmit={handleSubmit}>
-                <div>ㅛ
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" onChange={handleInputChange} />
+                <div>
+                    <label htmlFor="text">CPU: </label>
+                    <input type="text" id="CPU" name="CPU" onChange={handleInputChange} />
                 </div>
                 <div>
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" onChange={handleInputChange} />
+                    <label htmlFor="text">GPU: </label>
+                    <input type="text" id="GPU" name="GPU" onChange={handleInputChange} />
+                </div>
+                <div>
+                    <label htmlFor="text">RAM: </label>
+                    <input type="text" id="RAM" name="RAM" onChange={handleInputChange} />
                 </div>
                 <button type="submit">Submit</button>
             </form>
