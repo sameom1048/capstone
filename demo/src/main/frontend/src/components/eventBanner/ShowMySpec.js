@@ -84,7 +84,7 @@ function ShowMySpec() {
             {cpuInfo !== null && <p>CPU 정보: {cpuInfo}</p>}
             {gpuInfo !== null && <p>GPU 정보: {gpuInfo}</p>}
             <form onSubmit={handleSubmit}>
-                <div>
+                <div>ㅛ
                     <label htmlFor="email">Email:</label>
                     <input type="email" id="email" name="email" onChange={handleInputChange} />
                 </div>
